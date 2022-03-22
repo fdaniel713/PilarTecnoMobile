@@ -11,14 +11,18 @@ export const styles = StyleSheet.create({
       },
 
     buttonContent: {
-      width: width/3,
-      height: height/3,
+      width: width/4,
+      height: height/4,
       margin: 10,
-      borderRadius:10
+      borderRadius:10,
+      justifyContent: 'center',
+      alignItem: 'center'
     },
 
     mainContent: {
-   
+      flex: 1,
+      width,
+      height,
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center'
@@ -29,5 +33,14 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center'
+    },
+
+    title: {
+      width: '100%',
+      textAlign: 'center',
+      fontSize: 20,
+      fontWeight:'bold',
+     
+
     }
 })
