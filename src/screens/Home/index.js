@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { Component, useCallback } from 'react';
-import {  SafeAreaView, View, Text, Pressable, ImageBackground, Image } from 'react-native';
+import {  SafeAreaView, View, Text, Pressable, ImageBackground, ToastAndroid } from 'react-native';
 import { styles } from './styles'
 
 export default Home = (props) => {
@@ -13,7 +13,7 @@ export default Home = (props) => {
 
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'red'}]}
-                    onPress={()=>console.log('boton1')}
+                    onPress={()=>ToastAndroid.show('ESTAS EN HOME', ToastAndroid.SHORT)}
                     >
                          <Text style={styles.title}> Home </Text>
                     </Pressable>
