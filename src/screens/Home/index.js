@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { Component, useCallback } from 'react';
 import {  SafeAreaView, View, Text, Pressable, ImageBackground, Image } from 'react-native';
 import { styles } from './styles'
@@ -18,7 +19,7 @@ export default Home = (props) => {
                     </Pressable>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'blue'}]}
-                    onPress={()=>console.log('boton 2')}
+                    onPress={()=>navigation.navigate('Profile')}
                     >
                          <Text style={styles.title}> Perfil </Text>   
                     </Pressable>
@@ -34,7 +35,7 @@ export default Home = (props) => {
                     </Pressable>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'purple'}]}
-                    onPress={()=>console.log('boton 4')}
+                    onPress={()=>navigation.navigate('Map')}
                     >
                          <Text style={styles.title}> Mapa </Text>
                     </Pressable>

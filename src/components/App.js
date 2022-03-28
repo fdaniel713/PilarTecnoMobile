@@ -8,7 +8,7 @@ import Home from '../screens/Home';
 import AppStack from '../routs/app';
 import { NavigationContainer } from '@react-navigation/native';
 
-export default App = () => {
+export default App = (props) => {
 
     return(
       //  <Provider store={store}>
