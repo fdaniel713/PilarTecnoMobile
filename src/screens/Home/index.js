@@ -2,7 +2,8 @@ import React, { Component, useCallback } from 'react';
 import {  SafeAreaView, View, Text, Pressable, ImageBackground, Image } from 'react-native';
 import { styles } from './styles'
 
-export default Home = () => {
+export default Home = (props) => {
+    const {navigation} = props;
 
     return(
         <SafeAreaView style={styles.container}>
@@ -11,7 +12,7 @@ export default Home = () => {
 
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'red'}]}
-                    onPress={()=>console.log('boton 1')}
+                    onPress={()=>console.log('boton1')}
                     >
                          <Text style={styles.title}> Home </Text>
                     </Pressable>
@@ -27,7 +28,7 @@ export default Home = () => {
                     <View style={styles.rowContent}>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'green'}]}
-                    onPress={()=>console.log('boton 3')}
+                    onPress={()=>navigation.navigate('List')}
                     >
                          <Text style={styles.title}> Lista </Text>
                     </Pressable>
