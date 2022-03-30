@@ -19,7 +19,7 @@ export default Home = (props) => {
                     </Pressable>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'blue'}]}
-                    onPress={()=>navigation.navigate('Profile')}
+                    onPress={()=>props.navigation.navigate('Perfil')}
                     >
                          <Text style={styles.title}> Perfil </Text>   
                     </Pressable>
@@ -29,13 +29,13 @@ export default Home = (props) => {
                     <View style={styles.rowContent}>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'green'}]}
-                    onPress={()=>navigation.navigate('List')}
+                    onPress={()=>props.navigation.navigate('Lista')}
                     >
                          <Text style={styles.title}> Lista </Text>
                     </Pressable>
                     <Pressable 
                     style={[styles.buttonContent,{backgroundColor: 'purple'}]}
-                    onPress={()=>navigation.navigate('Map')}
+                    onPress={()=>props.navigation.navigate('Mapa')}
                     >
                          <Text style={styles.title}> Mapa </Text>
                     </Pressable>

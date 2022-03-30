@@ -3,7 +3,7 @@ import React from 'react';
 import {  SafeAreaView, View, Text,  ImageBackground } from 'react-native';
 import { styles } from './styles'
 
-export default Mapa = () => {
+export default ListItem = () => {
 
     return(
         <SafeAreaView style={styles.container}>
@@ -12,7 +12,7 @@ export default Mapa = () => {
 
                <Text>
 
-                Mapa
+                    list
 
                </Text>
 
