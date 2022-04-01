@@ -8,6 +8,7 @@ export default Mapa = () => {
     return(
         <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/descarga.png')}>
+                
                 <Header  />
                <Text>   mapa  </Text>
            

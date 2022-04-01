@@ -10,11 +10,7 @@ export default List = () => {
             <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/descarga.png')}>
                
                 <Header  />
-               <Text>
-
-                    list
-
-               </Text>
+               <Text> list </Text>
 
              </ImageBackground>
 
