@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     buttonContent: {
       width: width/4,
       height: height/4,
-      margin: 50,
+      margin: 30,
       borderRadius:10,
       alignItem: 'center',
       justifyContent:'center'

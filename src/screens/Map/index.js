@@ -2,21 +2,15 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {  SafeAreaView, View, Text,  ImageBackground } from 'react-native';
 import { styles } from './styles'
-
+import Header from '../../components/Header'
 export default Mapa = () => {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/galaxya.jpg')}>
-                <View style={styles.rowContent}>
-
-               <Text>
-
-                Mapa
-
-               </Text>
-
-                 </View>  
+            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/descarga.png')}>
+                <Header  />
+               <Text>   mapa  </Text>
+           
              </ImageBackground>
 
         </SafeAreaView>

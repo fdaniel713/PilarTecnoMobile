@@ -7,14 +7,16 @@ import {
 import Home from '../screens/Home';
 import AppStack from '../routs/app';
 import { NavigationContainer } from '@react-navigation/native';
+import { Provider } from 'react-redux';
+import {store} from '../store'
 
 export default App = (props) => {
 
     return(
-      //  <Provider store={store}>
+       <Provider store={store}>
         <NavigationContainer >
             <AppStack />
         </NavigationContainer>
-   // </Provider>
+       </Provider>
     )
 }

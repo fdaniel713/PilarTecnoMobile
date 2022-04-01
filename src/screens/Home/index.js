@@ -2,19 +2,27 @@ import 'react-native-gesture-handler';
 import React, { Component, useCallback } from 'react';
 import {  SafeAreaView, View, Text, Pressable, ImageBackground, ToastAndroid } from 'react-native';
 import { styles } from './styles'
+import { theme } from '../../../constants';
+import Header from '../../components/Header'
 
 export default Home = (props) => {
+  
     const {navigation} = props;
 
     return(
-        <SafeAreaView style={styles.container}>
-            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/image1.jpg')}>
-                <View style={styles.rowContent}>
-
-                    <Pressable 
+        <View style={styles.container}>  
+            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/galaxya.jpg')}>
+        <Header/>
+               
+            <View style={styles.rowContent}>
+                
+                    <Pressable
+                        
                     style={[styles.buttonContent,{backgroundColor: 'red'}]}
                     onPress={()=>ToastAndroid.show('ESTAS EN HOME', ToastAndroid.SHORT)}
                     >
+                         
+                         
                          <Text style={styles.title}> Home </Text>
                     </Pressable>
                     <Pressable 
@@ -41,8 +49,9 @@ export default Home = (props) => {
                     </Pressable>
 
                  </View>  
+               
              </ImageBackground>
 
-        </SafeAreaView>
+        </View>
     )
 }

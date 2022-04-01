@@ -7,16 +7,15 @@ export default List = () => {
 
     return(
         <SafeAreaView style={styles.container}>
-            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/galaxya.jpg')}>
-                <View style={styles.rowContent}>
-
+            <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/descarga.png')}>
+               
+                <Header  />
                <Text>
 
                     list
 
                </Text>
 
-                 </View>  
              </ImageBackground>
 
         </SafeAreaView>

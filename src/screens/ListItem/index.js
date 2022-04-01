@@ -9,7 +9,7 @@ export default ListItem = () => {
         <SafeAreaView style={styles.container}>
             <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/galaxya.jpg')}>
                 <View style={styles.rowContent}>
-
+                <Header  />
                <Text>
 
                     list
