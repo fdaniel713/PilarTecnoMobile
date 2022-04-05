@@ -2,73 +2,81 @@ import React from 'react';
 import {
     StyleSheet,
     View,
+    Alert,
     Text,
-    Linking,
-    StyleProp,
-    TextStyle,
-    ViewStyle,
-    } from 'react-native';
-import { Header as HeaderRNE, HeaderProps, Icon } from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { theme } from "../../constants";
-   
+    Dimensions,
+    TouchableOpacity,
+} from 'react-native';
+import { Header as HeaderRN, Icon } from 'react-native-elements';
 
-    export default Header = () => {
+const Header = (props) => {
 
-        const docs = () => {
-           
-        };
+    
+const { leftIcon, leftAction, title } = props
 
-
-        return (
-        <SafeAreaProvider style={{position: 'absolute' , top:-330}}>
-            <HeaderRNE
-            containerStyle={styles.headerContainer}
-            backgroundColor='#6F686D'
-            leftComponent={{
-                icon: 'menu',
-                color: '#fff',
-                marginTop: 5,
-               // marginRight:130
-            }}
-            rightComponent={
-                <View style={styles.headerRight}>
-                    <TouchableOpacity onPress={docs}>
-                    <Icon name="description" color="white" />
-                    </TouchableOpacity>
-                </View>
-            }
-            centerComponent={{ text: 'Pilar Tecno', style: styles.heading }}
-            />
-        </SafeAreaProvider>
+    const createAlert = () => {
+        Alert.alert(
+            'Cohete', 'Presionaste el cohete',
+            [
+                { text: 'ok', onPress: () => console.log('OK Pressed') },
+            ]
         );
-        };
+    };
+
+    return (
+        <View style={{ position: 'absolute', top: 0 }}>
+            <HeaderRN
+                barStyle="light-content"
+                containerStyle={styles.headerContainer}
+                backgroundColor="#397af8"
+                leftComponent={leftIcon ?
+                    (<TouchableOpacity
+                            style={{marginLeft:10}}
+                            onPress={leftAction?()=>leftAction():false}
+                       >
+                            <Icon type="material" name={leftIcon} color="white" size={30} />
+                       
+                    </TouchableOpacity>
+                    )
+                    :
+                    { icon: 'menu', color: '#fff', }
+                }
+
+                rightComponent={
+                    <View style={styles.headerRight}>
+                        <TouchableOpacity
+                            style={{ marginLeft: 10 }}
+                            onPress={() => createAlert()}>
+                            <Icon type="antdesign" name="rocket1" color="white" />
+                        </TouchableOpacity>
+                    </View>
+                }
+                centerComponent={{ text:title?title:'Pilar Tecno', style: styles.heading }}
+            />
+        </View>
+    );
+};
 
 const styles = StyleSheet.create({
     headerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    paddingVertical: 15,
-    //paddingHorizontal:130
+        fle: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#293847',
+        marginBottom: 20,
+        width: '100%',
+        paddingVertical: 10,
     },
     heading: {
-    
-    color: 'white',
-    fontSize: 20,
-    fontWeight: 'bold',
+        color: 'white',
+        fontSize: 22,
+        fontWeight: 'bold',
     },
     headerRight: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginTop: 5,
-   // marginLeft:130
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: 5,
     },
-    subheaderText: {
-    color: 'white',
-    fontSize: 10,
-    fontWeight: 'bold',
-    },
-  
-    });
+});
+
+export default Header;

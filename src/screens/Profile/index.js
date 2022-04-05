@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { Button, Icon, Input } from "react-native-elements";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {actions} from '../../store/actions'
-
+import Header from '../../components/Header'
 
 export default Profile = () => {
 
@@ -26,7 +26,7 @@ const dispatch = useDispatch()
         <View style={styles.container}>
           
                 <Header  />
-                <ImageBackground style={styles.mainContent} source={require('../../aseests/patterns/descarga.png')}>
+              
               
                 <View style={styles.infoContainer}>
                         <Text style={{fontSize:20, color:"black", marginBottom:6}}>Fuentes Daniel</Text>
@@ -43,7 +43,7 @@ const dispatch = useDispatch()
 
                  </View> 
                  
-             </ImageBackground>
+   
 
         </View>
     )

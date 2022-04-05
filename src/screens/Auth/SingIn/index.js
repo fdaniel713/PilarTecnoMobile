@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { useState , Component} from "react";
 import { useDispatch } from 'react-redux'
 import { View, Text,Dimensions } from "react-native";

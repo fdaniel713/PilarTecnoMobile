@@ -21,7 +21,7 @@ export const theme = {
   Button: {
     buttonStyle:'red',
     titleStyle: {
-      color: '#293847',
+      color: '#293848',
       fontWeight:'bold'
     },
   },

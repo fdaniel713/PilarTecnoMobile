@@ -4,10 +4,12 @@ import React, {Component, useCallback} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Tabs from './Tabs';
 import List from '../screens/List'
+import ListItems from '../screens/ListItems'
 import Maps from '../screens/Map'
 import Login from '../screens/Auth/SingIn'
 import Profile from '../screens/Profile'
 import { useSelector } from 'react-redux';
+
 
 
 const Stack = createStackNavigator();
@@ -27,6 +29,8 @@ export default AppStack=(props)=> {
       <Stack.Screen name="Profile" component={Profile} />
 
        <Stack.Screen name="List" component={List} />
+       <Stack.Screen name="ListItems" component={ListItems} />
+
        <Stack.Screen name="Map" component={Maps} />
      
 

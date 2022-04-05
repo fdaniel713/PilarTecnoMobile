@@ -20,7 +20,7 @@ return (
               activeColor={colors.active}
               inactiveColor={colors.inactive}
               barStyle={{
-                backgroundColor: colors.bar
+                backgroundColor:'#293847'
               }}
 >
 
