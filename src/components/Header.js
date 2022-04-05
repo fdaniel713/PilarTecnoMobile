@@ -12,7 +12,7 @@ import { Header as HeaderRN, Icon } from 'react-native-elements';
 const Header = (props) => {
 
     
-const { leftIcon, leftAction, title } = props
+const { leftIcon, leftAction, title} = props
 
     const createAlert = () => {
         Alert.alert(
@@ -29,8 +29,9 @@ const { leftIcon, leftAction, title } = props
                 barStyle="light-content"
                 containerStyle={styles.headerContainer}
                 backgroundColor="#397af8"
-                leftComponent={leftIcon ?
-                    (<TouchableOpacity
+                leftComponent={leftIcon?
+                    (
+                    <TouchableOpacity
                             style={{marginLeft:10}}
                             onPress={leftAction?()=>leftAction():false}
                        >
@@ -39,7 +40,7 @@ const { leftIcon, leftAction, title } = props
                     </TouchableOpacity>
                     )
                     :
-                    { icon: 'menu', color: '#fff', }
+                    { icon: 'menu', color: '#ffff' }
                 }
 
                 rightComponent={
@@ -51,7 +52,7 @@ const { leftIcon, leftAction, title } = props
                         </TouchableOpacity>
                     </View>
                 }
-                centerComponent={{ text:title?title:'Pilar Tecno', style: styles.heading }}
+                centerComponent={{ text:title?title: 'PilarTecno', style: styles.heading }}
             />
         </View>
     );

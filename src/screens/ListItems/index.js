@@ -18,6 +18,7 @@ export default ListItems = (props) => {
     const [pokemon, setPokemon] = useState()
     const [imgId, setImgId] = useState()
     const [isCollapsed, setIsCollapsed] = useState(true)
+  
 
 
     useEffect(()=>{
@@ -34,12 +35,14 @@ export default ListItems = (props) => {
         <View style={styles.container}>
           
                 
-                <Header leftIcon='arrow-back' title={pokemon?.name}  leftAction={()=> props.navigation.goBack()}/>
+                <Header  leftIcon='arrow-back' title={pokemon?.name} leftAction={()=>props.navigation.goBack()}/>
 
                <ScrollView contentContainerStyle={{marginTop: heigth/8, flex:1,width}}>
-                   <View style={{height:100,width:100, zIndex:2,opacity:.8,borderRadius:100,right:10, backgroundColor:'#000000',position:'absolute', justifyContent:'center', marginRight:-10}}>
+                   
+                   <View style={{height:100,width:100, zIndex:2,opacity:.8,borderRadius:100,right:10, top:10,backgroundColor:'#000000',position:'absolute', justifyContent:'center', alignItems:'center'}}>
                        <Text style={{fontSize:20, fontWeight:'bold', color:'white' }}>{imgId}</Text>
                    </View>
+
 
                    <View style={{flex:1, backgroundColor: '#ffffff'}}> 
                     <Image style={{width:'100%', height:'100%'}}resizeMode='contain'  source={{uri: `${IMG_URL}${imgId}.png`}}/>
@@ -48,13 +51,13 @@ export default ListItems = (props) => {
                    <View style={{height:0.5 ,width, backgroundColor:'#646464'}}/>
                    <View style={{flex:2,backgroundColor:'#fffff',alignItems:'center'}} >
                         
-                       <View style={{height: heigth/3,width:width/1.1, borderRadius:8,backgroundColor:'blue',marginTop:'5%'}} >
-                           <View style={{flexDirection:'row'}}>
+                       <View style={{height: heigth/3,width:width/1.1, borderRadius:8,backgroundColor:'red',marginTop:'5%'}} >
+                           <View style={{flexDirection:'column'}}>
 
-                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Peso:     </Text>{pokemon?.width}</Text>
-                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Altura:  </Text>{pokemon?.height}</Text>
+                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Peso: </Text>{pokemon?.weight}</Text>
+                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Altura: </Text>{pokemon?.height}</Text>
 
-                           </View>
+                            </View>
 
                            <Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>Tipos</Text>
 
@@ -64,13 +67,13 @@ export default ListItems = (props) => {
                             (
                                 <Text>{type.type.name}</Text>
                             )
-                        )} */}
-
+                        )}
+ */}
 
                     </View>
 
-                    <View>
-                    <View style={{flexDirection:'column', backgroundColor:'green'}}>
+                    <View></View>
+                    <View style={{flexDirection:'row', backgroundColor:'green'}}>
                         <TouchableOpacity onPress={()=>setIsCollapsed(!isCollapsed)}>
                           <Text> Habilidades</Text>  
                         </TouchableOpacity>
@@ -79,8 +82,11 @@ export default ListItems = (props) => {
                     
                                 {pokemon?.abilities.map(a=>
                                     (
-                                        < >
-                                        <Text><Text style={{fontSize:30,fontWeight:'bold'}}>.</Text><Text> {a.ability.name}</Text></Text>
+                                        <>
+                                        
+                                        <Text style={{fontSize:30,fontWeight:'bold'}}>.</Text>
+                                        <Text style={{fontSize:30,fontWeight:'bold'}}> {a.ability.name}</Text>
+                                        
                                         </>
                                    )
                                    )}
@@ -91,7 +97,7 @@ export default ListItems = (props) => {
 
                    </View>
                    </View>
-                   </View>
+                  
 
                </ScrollView>
 
