@@ -22,25 +22,25 @@ const { leftIcon, leftAction, title} = props
             ]
         );
     };
-
+                                                        // zIndex:2 maneja los botenes q hay en el header
     return (
-        <View style={{ position: 'absolute', top: 0 }}>
-            <HeaderRN
+        <View style={{ position: 'absolute', top: 0, zIndex:2 }}> 
+             <HeaderRN
                 barStyle="light-content"
                 containerStyle={styles.headerContainer}
                 backgroundColor="#397af8"
                 leftComponent={leftIcon?
                     (
-                    <TouchableOpacity
-                            style={{marginLeft:10}}
-                            onPress={leftAction?()=>leftAction():false}
-                       >
-                            <Icon type="material" name={leftIcon} color="white" size={30} />
-                       
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={{ marginLeft: 10 }}
+                            onPress={leftAction?() => leftAction():false}
+                        >
+                            <Icon type="material" name={leftIcon} color="white" size={28} />
+                        </TouchableOpacity>
                     )
                     :
-                    { icon: 'menu', color: '#ffff' }
+                    { icon: 'menu',
+                     color: '#fff', }
                 }
 
                 rightComponent={

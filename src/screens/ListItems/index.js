@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { useCallback, useEffect, useState } from 'react';
-import {  SafeAreaView, View,Dimensions, Text,  ImageBackground,ScrollView } from 'react-native';
-import { Image,Button } from 'react-native-elements';
+import {  SafeAreaView, View,Dimensions,  ImageBackground,ScrollView } from 'react-native';
+import { Image,Button,Text } from 'react-native-elements';
 import { styles } from './styles'
 import Header from '../../components/Header'
 import { getPokemon, IMG_URL } from '../../api';
@@ -22,10 +22,10 @@ export default ListItems = (props) => {
 
 
     useEffect(()=>{
-        console.log(JSON.stringify(props))
+        console.log(JSON.stringify(url))//cambie PROPS por URL
         getPokemon(url).then(data=>{
             const path=url.split('/')
-            setPokemon(data.results)
+            setPokemon(data)
             setImgId(getPokemonImgId(path[6]))
         })
            
@@ -35,7 +35,11 @@ export default ListItems = (props) => {
         <View style={styles.container}>
           
                 
-                <Header  leftIcon='arrow-back' title={pokemon?.name} leftAction={()=>props.navigation.goBack()}/>
+          <Header
+                leftIcon="arrow-back"
+                title={pokemon?.name}
+                leftAction={() => props.navigation.goBack()}
+            />
 
                <ScrollView contentContainerStyle={{marginTop: heigth/8, flex:1,width}}>
                    
@@ -54,28 +58,31 @@ export default ListItems = (props) => {
                        <View style={{height: heigth/3,width:width/1.1, borderRadius:8,backgroundColor:'red',marginTop:'5%'}} >
                            <View style={{flexDirection:'column'}}>
 
-                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Peso: </Text>{pokemon?.weight}</Text>
-                               <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Altura: </Text>{pokemon?.height}</Text>
+                 <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>
+                      Peso: </Text>{pokemon?.weight} </Text>
+                 <Text style={{fontSize:16,color:'white'}}><Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>
+                      Altura: </Text>{pokemon?.height} </Text>
 
                             </View>
 
-                           <Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>Tipos</Text>
+                           {/* <Text style={{fontSize:18,fontWeight:'bold', color:'white'}}> Tipos</Text> */}
 
                     <View style={{flexDirection:'row'}}>
-                        <Text> tipos </Text>
-                        {/* {pokemon?.types.map(type=>
+                        <Text style={{fontSize:18,fontWeight:'bold', color:'white'}}>Tipos:  </Text>
+                        {pokemon?.types.map(type=>
                             (
-                                <Text>{type.type.name}</Text>
+                                <Text style={{fontSize:18, color:'white'}}>{type.type.name}</Text>
                             )
                         )}
- */}
+
 
                     </View>
 
                     <View></View>
-                    <View style={{flexDirection:'row', backgroundColor:'green'}}>
+                    <View style={{flexDirection:'row', backgroundColor:'white'}}>
                         <TouchableOpacity onPress={()=>setIsCollapsed(!isCollapsed)}>
-                          <Text> Habilidades</Text>  
+                          <Text style={{fontSize:16,fontWeight:'bold'}} > Habilidades </Text> 
+
                         </TouchableOpacity>
                         
                         <Collapsible collapsed={isCollapsed}>
@@ -84,8 +91,7 @@ export default ListItems = (props) => {
                                     (
                                         <>
                                         
-                                        <Text style={{fontSize:30,fontWeight:'bold'}}>.</Text>
-                                        <Text style={{fontSize:30,fontWeight:'bold'}}> {a.ability.name}</Text>
+                                       <Text><Text style={{fontSize:18,fontWeight:'bold'}}>.</Text><Text style={{fontSize:15}}>{a.ability.name}</Text></Text>
                                         
                                         </>
                                    )

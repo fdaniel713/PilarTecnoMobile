@@ -6,8 +6,7 @@ import { getPokemonList, IMG_URL} from '../../api';
 import {getPokemonImgId} from '../../utils'
 import { Avatar, Button, ListItem } from 'react-native-elements';
 import Header from '../../components/Header'
-import ListItems from '../ListItems'
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
+
 
 
 
