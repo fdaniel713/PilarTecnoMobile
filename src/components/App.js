@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { Component, useCallback } from 'react';
+import React, { Component, useCallback , useEffect} from 'react';
 import { 
     View, 
     Text
@@ -9,9 +9,13 @@ import AppStack from '../routs/app';
 import { NavigationContainer } from '@react-navigation/native';
 import { Provider } from 'react-redux';
 import {store} from '../store'
+import { hasLocationPermission } from '../LocationPermission';
 
 export default App = (props) => {
-
+    useEffect(() => {
+        hasLocationPermission()
+    }, [])
+    
     return(
        <Provider store={store}>
         <NavigationContainer >
